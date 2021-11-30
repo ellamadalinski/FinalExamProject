@@ -14,6 +14,7 @@
 		B6FBFCE027565EEC001365FC /* FinalExamProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCDE27565EEC001365FC /* FinalExamProject.xcdatamodeld */; };
 		B6FBFCE227565EED001365FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FBFCE127565EED001365FC /* Assets.xcassets */; };
 		B6FBFCE527565EED001365FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FBFCE327565EED001365FC /* LaunchScreen.storyboard */; };
+		B6FBFCF1275665DF001365FC /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCF0275665DF001365FC /* Students.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B6FBFCE127565EED001365FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6FBFCE427565EED001365FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6FBFCE627565EED001365FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6FBFCF0275665DF001365FC /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B6FBFCD727565EEC001365FC /* SceneDelegate.swift */,
 				B6FBFCD927565EEC001365FC /* ViewController.swift */,
 				B6FBFCDB27565EEC001365FC /* Main.storyboard */,
+				B6FBFCF0275665DF001365FC /* Students.swift */,
 				B6FBFCE127565EED001365FC /* Assets.xcassets */,
 				B6FBFCE327565EED001365FC /* LaunchScreen.storyboard */,
 				B6FBFCE627565EED001365FC /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				B6FBFCDA27565EEC001365FC /* ViewController.swift in Sources */,
 				B6FBFCE027565EEC001365FC /* FinalExamProject.xcdatamodeld in Sources */,
+				B6FBFCF1275665DF001365FC /* Students.swift in Sources */,
 				B6FBFCD627565EEC001365FC /* AppDelegate.swift in Sources */,
 				B6FBFCD827565EEC001365FC /* SceneDelegate.swift in Sources */,
 			);
