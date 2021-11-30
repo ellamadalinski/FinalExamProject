@@ -8,9 +8,9 @@
 import Foundation
 
 class Students{
-    
-    init(){
-        
+    var name: String
+    init(n: String){
+        name = n
     }
-    
+    //you ever just jump off a cliff fosho?
 }
