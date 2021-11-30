@@ -31,8 +31,20 @@
                     <view key="view" contentMode="scaleToFill" id="ZAZ-0D-BrO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="23g-qf-Ktw">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FW0-m5-RGk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="23g-qf-Ktw" firstAttribute="top" secondItem="FW0-m5-RGk" secondAttribute="top" id="KZc-un-a55"/>
+                            <constraint firstItem="FW0-m5-RGk" firstAttribute="trailing" secondItem="23g-qf-Ktw" secondAttribute="trailing" id="RNd-fl-cb2"/>
+                            <constraint firstItem="23g-qf-Ktw" firstAttribute="leading" secondItem="FW0-m5-RGk" secondAttribute="leading" id="YR5-3h-Crp"/>
+                            <constraint firstItem="FW0-m5-RGk" firstAttribute="bottom" secondItem="23g-qf-Ktw" secondAttribute="bottom" id="tEi-ag-GwG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Athletics" image="flag.2.crossed" catalog="system" id="rTg-qU-Kuw"/>
                 </viewController>
@@ -47,8 +59,20 @@
                     <view key="view" contentMode="scaleToFill" id="tuR-r8-3UP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zaE-hc-bHK">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SuT-On-3Z4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SuT-On-3Z4" firstAttribute="bottom" secondItem="zaE-hc-bHK" secondAttribute="bottom" id="4Va-9B-LTn"/>
+                            <constraint firstItem="SuT-On-3Z4" firstAttribute="trailing" secondItem="zaE-hc-bHK" secondAttribute="trailing" id="gUs-Pr-kba"/>
+                            <constraint firstItem="zaE-hc-bHK" firstAttribute="leading" secondItem="SuT-On-3Z4" secondAttribute="leading" id="nJf-4S-KXn"/>
+                            <constraint firstItem="zaE-hc-bHK" firstAttribute="top" secondItem="SuT-On-3Z4" secondAttribute="top" id="yqt-am-gAk"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Clubs" image="suit.club" catalog="system" id="obC-w2-laB"/>
                 </viewController>
@@ -63,8 +87,20 @@
                     <view key="view" contentMode="scaleToFill" id="FYN-zK-NgB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xpG-Th-oOZ">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fL1-Vr-sC5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xpG-Th-oOZ" firstAttribute="top" secondItem="fL1-Vr-sC5" secondAttribute="top" id="0lL-nc-Cfa"/>
+                            <constraint firstItem="fL1-Vr-sC5" firstAttribute="bottom" secondItem="xpG-Th-oOZ" secondAttribute="bottom" id="60w-M1-mGj"/>
+                            <constraint firstItem="fL1-Vr-sC5" firstAttribute="trailing" secondItem="xpG-Th-oOZ" secondAttribute="trailing" id="6gL-W6-vyp"/>
+                            <constraint firstItem="xpG-Th-oOZ" firstAttribute="leading" secondItem="fL1-Vr-sC5" secondAttribute="leading" id="9KC-Wd-GVy"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Classes" image="book" catalog="system" id="DnM-XG-Pjg"/>
                 </viewController>
