@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGf-Ok-slW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGf-Ok-slW">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +18,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="QHZ-Fx-N3X"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="QHZ-Fx-N3X"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.95652173913049" y="77.678571428571431"/>
+            <point key="canvasLocation" x="631" y="269"/>
         </scene>
         <!--Athletics-->
         <scene sceneID="m7e-Z0-4Co">
@@ -34,11 +34,11 @@
                         <viewLayoutGuide key="safeArea" id="FW0-m5-RGk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Athletics" id="rTg-qU-Kuw"/>
+                    <tabBarItem key="tabBarItem" title="Athletics" image="flag.2.crossed" catalog="system" id="rTg-qU-Kuw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGC-0o-AVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="78"/>
+            <point key="canvasLocation" x="-258" y="1037"/>
         </scene>
         <!--Clubs-->
         <scene sceneID="G61-yk-fzP">
@@ -50,11 +50,11 @@
                         <viewLayoutGuide key="safeArea" id="SuT-On-3Z4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Clubs" id="obC-w2-laB"/>
+                    <tabBarItem key="tabBarItem" title="Clubs" image="suit.club" catalog="system" id="obC-w2-laB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-in-o2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="78"/>
+            <point key="canvasLocation" x="631" y="1036"/>
         </scene>
         <!--Classes-->
         <scene sceneID="KLo-QD-JmW">
@@ -66,11 +66,11 @@
                         <viewLayoutGuide key="safeArea" id="fL1-Vr-sC5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Classes" id="DnM-XG-Pjg"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="book" catalog="system" id="DnM-XG-Pjg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqQ-g4-MoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3294" y="78"/>
+            <point key="canvasLocation" x="631" y="-445"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6P7-s9-n0e">
@@ -78,6 +78,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mGf-Ok-slW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7a-Mu-Guf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -90,10 +91,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCE-5S-iZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="964"/>
+            <point key="canvasLocation" x="-257" y="269"/>
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="flag.2.crossed" catalog="system" width="128" height="73"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="suit.club" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
