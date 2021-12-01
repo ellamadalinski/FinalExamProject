@@ -22,6 +22,11 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addAction(_ sender: UIButton) {
+        self.presentAlertController()
+    }
+    
+    
 
     func presentAlertController() {
         let alertController = UIAlertController(title: "Club Name",
@@ -37,7 +42,7 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
                                             guard let textFields = alertController?.textFields else { return }
                                             
                                             if let clubName = textFields[0].text {
-                                                StaticStuff.clubArray.append(Club(c: clubName, sa: [Students]))
+                                                StaticStuff.clubArray.append(Club(c: clubName, sa: [Students]()))
                                                
                                                 
                                             }
@@ -52,12 +57,31 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
        
     }
     
+    //table view stuff
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return StaticStuff.clubArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = StaticStuff.clubArray[indexPath.row].clubName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            StaticStuff.clubArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+          
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       performSegue(withIdentifier: "clubsToStudents", sender: nil)
+            
+        
     }
 
 }

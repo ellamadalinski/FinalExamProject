@@ -75,9 +75,9 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
         cell.detailTextLabel?.text = StaticStuff.classesArray[indexPath.row].classPeriod
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             StaticStuff.classesArray.remove(at: indexPath.row)
@@ -86,5 +86,12 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
           
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       performSegue(withIdentifier: "classesToStudents", sender: nil)
+            
+        
+    }
+    
 
 }
