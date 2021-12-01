@@ -38,11 +38,13 @@ public class Class {
 
 public class Athletic {
     var athleticName: String
+    var season: String
     var studentsArray: [Students]
     
-    init(a: String, sa: [Students]) {
+    init(a: String, sa: [Students], s: String) {
         athleticName = a
         studentsArray = sa
+        season = s
     }
 }
 
