@@ -32,27 +32,33 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func presentAlertController() {
-        let alertController = UIAlertController(title: "class name",
+        let alertController = UIAlertController(title: "Class Name",
                                                 message: nil,
                                                 preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "class name"
+            textField.placeholder = "Class Name"
             
         }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Class Period"
+        }
         
-        let continueAction = UIAlertAction(title: "Continue",
+        let addClassAction = UIAlertAction(title: "Add",
                                            style: .default) { [weak alertController] _ in
                                             guard let textFields = alertController?.textFields else { return }
                                             
                                             if let className = textFields[0].text {
-                                                StaticStuff.classesArray.append(Class(c: className, sa: [Students]()))
+                                                if let classPeriod = textFields[1].text{
+                                                    StaticStuff.classesArray.append(Class(c: className, cp: classPeriod, sa: [Students]()))
+                                                }
                                                
                                                 
                                             }
             self.tableViewOutlet.reloadData()
         }
-
-        alertController.addAction(continueAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(addClassAction)
         
         self.present(alertController,
                      animated: true)
@@ -66,6 +72,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = StaticStuff.classesArray[indexPath.row].className
+        cell.detailTextLabel?.text = StaticStuff.classesArray[indexPath.row].classPeriod
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

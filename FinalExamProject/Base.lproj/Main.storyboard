@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630.76923076923072" y="268.72037914691941"/>
+            <point key="canvasLocation" x="-442" y="294"/>
         </scene>
         <!--Athletics-->
         <scene sceneID="m7e-Z0-4Co">
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGC-0o-AVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="1037"/>
+            <point key="canvasLocation" x="631" y="294"/>
         </scene>
         <!--Clubs-->
         <scene sceneID="G61-yk-fzP">
@@ -87,6 +87,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Clubs" image="suit.club" catalog="system" id="obC-w2-laB"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="zaE-hc-bHK" id="Ojb-XZ-08d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-in-o2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,7 +188,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCE-5S-iZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="269"/>
+            <point key="canvasLocation" x="-1506" y="294"/>
         </scene>
     </scenes>
     <resources>

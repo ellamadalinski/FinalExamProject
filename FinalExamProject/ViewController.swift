@@ -31,11 +31,11 @@ class ViewController: UIViewController {
         }
     }
     func presentAlertController() {
-        let alertController = UIAlertController(title: "name",
+        let alertController = UIAlertController(title: "Name",
                                                 message: nil,
                                                 preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "name"
+            textField.placeholder = "Name"
         }
         
         let continueAction = UIAlertAction(title: "Continue",

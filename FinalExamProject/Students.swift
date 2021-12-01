@@ -26,10 +26,12 @@ class Students{
 
 public class Class {
     var className: String
+    var classPeriod: String
     var studentsArray: [Students]
     
-    init(c: String, sa: [Students]) {
+    init(c: String, cp: String, sa: [Students]) {
         className = c
+        classPeriod = cp
         studentsArray = sa
     }
 }
