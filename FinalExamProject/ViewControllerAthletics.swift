@@ -24,15 +24,15 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func presentAlertController() {
-        let alertController = UIAlertController(title: "Athletics name",
+        let alertController = UIAlertController(title: "Athletics Name",
                                                 message: nil,
                                                 preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "Athletics name"
+            textField.placeholder = "Team Name"
             
         }
         alertController.addTextField { (textField) in
-            textField.placeholder = "Athletics season"
+            textField.placeholder = "Season"
             
         }
         
@@ -81,7 +81,7 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       performSegue(withIdentifier: "athleticsToStudents", sender: nil)
+       performSegue(withIdentifier: "athleticsToPlayers", sender: nil)
             
         
     }

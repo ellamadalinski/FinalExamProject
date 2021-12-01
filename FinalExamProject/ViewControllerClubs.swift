@@ -79,7 +79,7 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       performSegue(withIdentifier: "clubsToStudents", sender: nil)
+       performSegue(withIdentifier: "clubsToMembers", sender: nil)
             
         
     }

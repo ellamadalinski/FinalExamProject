@@ -10,6 +10,12 @@
 		069F2FB62756E79C00B0877A /* ViewControllerClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F2FB52756E79C00B0877A /* ViewControllerClasses.swift */; };
 		069F2FB82756E7B300B0877A /* ViewControllerAthletics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F2FB72756E7B300B0877A /* ViewControllerAthletics.swift */; };
 		069F2FBA2756E7C600B0877A /* ViewControllerClubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069F2FB92756E7C600B0877A /* ViewControllerClubs.swift */; };
+		B61356032757FA1500F1E56A /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61356022757FA1500F1E56A /* PlayerViewController.swift */; };
+		B61356052757FA3100F1E56A /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61356042757FA3100F1E56A /* StudentViewController.swift */; };
+		B61356072757FA4300F1E56A /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61356062757FA4300F1E56A /* MemberViewController.swift */; };
+		B61356092757FCF900F1E56A /* StudentNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61356082757FCF900F1E56A /* StudentNamesViewController.swift */; };
+		B613560B2757FD0B00F1E56A /* PlayerNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613560A2757FD0B00F1E56A /* PlayerNamesViewController.swift */; };
+		B613560D2757FD1900F1E56A /* MemberNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613560C2757FD1900F1E56A /* MemberNamesViewController.swift */; };
 		B6FBFCD627565EEC001365FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD527565EEC001365FC /* AppDelegate.swift */; };
 		B6FBFCD827565EEC001365FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD727565EEC001365FC /* SceneDelegate.swift */; };
 		B6FBFCDA27565EEC001365FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD927565EEC001365FC /* ViewController.swift */; };
@@ -24,6 +30,12 @@
 		069F2FB52756E79C00B0877A /* ViewControllerClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerClasses.swift; sourceTree = "<group>"; };
 		069F2FB72756E7B300B0877A /* ViewControllerAthletics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAthletics.swift; sourceTree = "<group>"; };
 		069F2FB92756E7C600B0877A /* ViewControllerClubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerClubs.swift; sourceTree = "<group>"; };
+		B61356022757FA1500F1E56A /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		B61356042757FA3100F1E56A /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		B61356062757FA4300F1E56A /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		B61356082757FCF900F1E56A /* StudentNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentNamesViewController.swift; sourceTree = "<group>"; };
+		B613560A2757FD0B00F1E56A /* PlayerNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNamesViewController.swift; sourceTree = "<group>"; };
+		B613560C2757FD1900F1E56A /* MemberNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberNamesViewController.swift; sourceTree = "<group>"; };
 		B6FBFCD227565EEC001365FC /* FinalExamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalExamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBFCD527565EEC001365FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBFCD727565EEC001365FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +82,12 @@
 				B6FBFCD727565EEC001365FC /* SceneDelegate.swift */,
 				B6FBFCD927565EEC001365FC /* ViewController.swift */,
 				B6FBFCDB27565EEC001365FC /* Main.storyboard */,
+				B61356082757FCF900F1E56A /* StudentNamesViewController.swift */,
+				B613560A2757FD0B00F1E56A /* PlayerNamesViewController.swift */,
+				B613560C2757FD1900F1E56A /* MemberNamesViewController.swift */,
+				B61356022757FA1500F1E56A /* PlayerViewController.swift */,
+				B61356042757FA3100F1E56A /* StudentViewController.swift */,
+				B61356062757FA4300F1E56A /* MemberViewController.swift */,
 				069F2FB52756E79C00B0877A /* ViewControllerClasses.swift */,
 				069F2FB72756E7B300B0877A /* ViewControllerAthletics.swift */,
 				069F2FB92756E7C600B0877A /* ViewControllerClubs.swift */,
@@ -153,14 +171,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61356072757FA4300F1E56A /* MemberViewController.swift in Sources */,
 				B6FBFCDA27565EEC001365FC /* ViewController.swift in Sources */,
 				B6FBFCE027565EEC001365FC /* FinalExamProject.xcdatamodeld in Sources */,
+				B613560B2757FD0B00F1E56A /* PlayerNamesViewController.swift in Sources */,
 				B6FBFCF1275665DF001365FC /* Students.swift in Sources */,
 				069F2FB82756E7B300B0877A /* ViewControllerAthletics.swift in Sources */,
 				069F2FBA2756E7C600B0877A /* ViewControllerClubs.swift in Sources */,
+				B61356092757FCF900F1E56A /* StudentNamesViewController.swift in Sources */,
 				B6FBFCD627565EEC001365FC /* AppDelegate.swift in Sources */,
 				B6FBFCD827565EEC001365FC /* SceneDelegate.swift in Sources */,
 				069F2FB62756E79C00B0877A /* ViewControllerClasses.swift in Sources */,
+				B61356032757FA1500F1E56A /* PlayerViewController.swift in Sources */,
+				B61356052757FA3100F1E56A /* StudentViewController.swift in Sources */,
+				B613560D2757FD1900F1E56A /* MemberNamesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
