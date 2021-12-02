@@ -9,6 +9,7 @@ import UIKit
 
 class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    var clickedAthletic = Athletic(a: "default", sa: [Students](), s: "default")
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
@@ -19,11 +20,6 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func addAction(_ sender: UIButton) {
-        self.presentAlertController()
-        
-    }
-    
-    func presentAlertController() {
         let alertController = UIAlertController(title: "Athletics Name",
                                                 message: nil,
                                                 preferredStyle: .alert)
@@ -36,16 +32,13 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
             
         }
         
-        let continueAction = UIAlertAction(title: "Add",
-                                           style: .default) { [weak alertController] _ in
-                                            guard let textFields = alertController?.textFields else { return }
-                                            
-                                            if let className = textFields[0].text {
-                                                if let season = textFields[1].text {
-                                                StaticStuff.athleticArray.append(Athletic(a: className, sa: [Students](), s: season))
-                                               
-                                                }
-                                            }
+        let continueAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+            
+            if let className = textFields[0].text {
+                if let season = textFields[1].text {
+                    StaticStuff.athleticArray.append(Athletic(a: className, sa: [Students](), s: season))
+                }
+            }
             self.tableViewOutlet.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -54,7 +47,7 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
         
         self.present(alertController,
                      animated: true)
-       
+        
     }
     
 
@@ -79,11 +72,19 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
           
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        clickedAthletic = StaticStuff.athleticArray[indexPath.row]
+        performSegue(withIdentifier: "athleticsToPlayers", sender: nil)
         
-       performSegue(withIdentifier: "athleticsToPlayers", sender: nil)
-            
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "athleticsToPlayers" {
+            let nvc = segue.destination as! PlayerNamesViewController
+            nvc.incomingAthletic = clickedAthletic
+            print("jamal is playing baseball")
+        }
     }
    
 

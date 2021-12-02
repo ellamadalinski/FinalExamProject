@@ -16,7 +16,8 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var addButtonAction: UIButton!
     
     var blankStudentArray = [Students]()
-    var clickedClassFosho = Class(c: "default", cp: "default", sa: [Students]())
+    var clickedClass = Class(c: "default", cp: "default", sa: [Students]())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,17 +44,14 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
             textField.placeholder = "Class Period"
         }
         
-        let addClassAction = UIAlertAction(title: "Add",
-                                           style: .default) { [weak alertController] _ in
-                                            guard let textFields = alertController?.textFields else { return }
-                                            
-                                            if let className = textFields[0].text {
-                                                if let classPeriod = textFields[1].text{
-                                                    StaticStuff.classesArray.append(Class(c: className, cp: classPeriod, sa: [Students]()))
-                                                }
+        let addClassAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+            if let className = textFields[0].text {
+                if let classPeriod = textFields[1].text{
+                    StaticStuff.classesArray.append(Class(c: className, cp: classPeriod, sa: [Students]()))
+                }
                                                
                                                 
-                                            }
+            }
             self.tableViewOutlet.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -64,6 +62,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
                      animated: true)
        
     }
+    
     //table view functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StaticStuff.classesArray.count
@@ -88,7 +87,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        clickedClassFosho = StaticStuff.classesArray[indexPath.row]
+        clickedClass = StaticStuff.classesArray[indexPath.row]
        performSegue(withIdentifier: "classesToStudents", sender: nil)
             
         
@@ -97,7 +96,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "classesToStudents" {
             let nvc = segue.destination as! StudentNamesViewController
-            nvc.incomingClass = clickedClassFosho
+            nvc.incomingClass = clickedClass
             print("jamal")
         }
     }

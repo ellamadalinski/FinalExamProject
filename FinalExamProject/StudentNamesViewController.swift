@@ -34,17 +34,16 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
     @IBAction func addStudentAction(_ sender: UIButton) {
         self.presentAlertController()
     }
+    
     func presentAlertController(){
-        let alertController = UIAlertController(title: "Student Name",
-                                                message: nil,
-                                                preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Student Name", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.placeholder = "Student Name"
             
         }
         
         
-        let addStudentAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+        let addNameAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                                             
                 if let studentName = textFields[0].text {
                                                 
@@ -55,7 +54,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-        alertController.addAction(addStudentAction)
+        alertController.addAction(addNameAction)
         
         self.present(alertController,
                      animated: true)

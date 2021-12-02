@@ -9,7 +9,7 @@ import UIKit
 
 class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
-    
+    var clickedClub = Club(c: "default", sa: [Students]())
     var blankStudentArray = [Students]()
     
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -79,9 +79,17 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       performSegue(withIdentifier: "clubsToMembers", sender: nil)
-            
+        clickedClub = StaticStuff.clubArray[indexPath.row]
+        performSegue(withIdentifier: "clubsToMembers", sender: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "clubsToMembers" {
+            let nvc = segue.destination as! MemberNamesViewController
+            nvc.incomingClub = clickedClub
+            print("jamal is clubbing")
+        }
     }
 
 }
