@@ -16,7 +16,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var addButtonAction: UIButton!
     
     var blankStudentArray = [Students]()
-    
+    var clickedClassFosho = Class(c: "default", cp: "default", sa: [Students]())
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,11 +87,19 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       
+        clickedClassFosho = StaticStuff.classesArray[indexPath.row]
        performSegue(withIdentifier: "classesToStudents", sender: nil)
             
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "classesToStudents" {
+            let nvc = segue.destination as! StudentNamesViewController
+            nvc.incomingClass = clickedClassFosho
+            print("jamal")
+        }
+    }
 
 }
