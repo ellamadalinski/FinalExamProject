@@ -27,4 +27,9 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
         return cell
     }
 
+    @IBAction func addMemberAction(_ sender: UIButton) {
+    }
+    
+    
+    
 }

@@ -154,6 +154,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addStudentAction:" destination="DH0-9V-wuc" eventType="touchUpInside" id="jqJ-bF-PY9"/>
+                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
@@ -473,6 +476,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addPlayerAction:" destination="ObR-pM-yPP" eventType="touchUpInside" id="100-7t-w8g"/>
+                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
@@ -531,6 +537,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addMemberAction:" destination="4ZG-CV-Iwo" eventType="touchUpInside" id="1B7-96-YEp"/>
+                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
