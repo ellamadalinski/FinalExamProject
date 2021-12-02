@@ -27,5 +27,9 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         return cell
     }
-
+    
+    @IBAction func addStudentAction(_ sender: UIButton) {
+    }
+    
+    
 }

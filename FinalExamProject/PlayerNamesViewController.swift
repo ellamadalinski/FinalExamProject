@@ -27,4 +27,7 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
         return cell
     }
 
+    @IBAction func addPlayerAction(_ sender: UIButton) {
+    }
+    
 }
