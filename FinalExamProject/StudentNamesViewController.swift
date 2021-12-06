@@ -21,15 +21,6 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         // Do any additional setup after loading the view.
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return incomingClass.studentsArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = incomingClass.studentsArray[indexPath.row].name
-        return cell
-    }
     
     @IBAction func addStudentAction(_ sender: UIButton) {
         self.presentAlertController()
@@ -59,6 +50,24 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         self.present(alertController,
                      animated: true)
        
+    }
+    //table view stuff
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return incomingClass.studentsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = incomingClass.studentsArray[indexPath.row].name
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+       // when you click on another cell it deselects the previous cell you were clicked on
+    
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "studentsToStudentInfo", sender: nil)
     }
     
 }
