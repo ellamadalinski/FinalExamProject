@@ -82,7 +82,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
    
     
     @IBAction func cellHeld(_ sender: UILongPressGestureRecognizer) {
-       
+        
         if sender.state == .began {
             let touchPoint = sender.location(in: tableViewOutlet)
             if let indexPath = tableViewOutlet.indexPathForRow(at: touchPoint) {
