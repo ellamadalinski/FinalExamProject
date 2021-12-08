@@ -67,7 +67,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        print("did select row at")
         whichClicked = indexPath.row
         performSegue(withIdentifier: "studentsToStudentInfo", sender: nil)
     }
@@ -79,9 +79,17 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
           
         }
     }
+   
     
     @IBAction func cellHeld(_ sender: UILongPressGestureRecognizer) {
        
+        if sender.state == .began {
+            let touchPoint = sender.location(in: tableViewOutlet)
+            if let indexPath = tableViewOutlet.indexPathForRow(at: touchPoint) {
+                whichClicked = indexPath.row
+            }
+        }
+        
         
         let alertController = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -93,7 +101,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         let changeNameAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
                                             
                 if let studentName = textFields[0].text {
-                                                
+                   
                     self.incomingClass.studentsArray[self.whichClicked].name = studentName
                     
                 }
