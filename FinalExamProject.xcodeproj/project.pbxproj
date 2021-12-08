@@ -19,6 +19,9 @@
 		B6424812275A598A00C7278A /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6424811275A598A00C7278A /* StudentInfoViewController.swift */; };
 		B6424814275A599800C7278A /* PlayerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6424813275A599800C7278A /* PlayerInfoViewController.swift */; };
 		B6424816275A59A700C7278A /* MemberInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6424815275A59A700C7278A /* MemberInfoViewController.swift */; };
+		B6629AA42760ED4D008DACC3 /* ChangeStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6629AA32760ED4D008DACC3 /* ChangeStudentViewController.swift */; };
+		B6629AA62760F08F008DACC3 /* ChangePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6629AA52760F08F008DACC3 /* ChangePlayerViewController.swift */; };
+		B6629AA82760F0A1008DACC3 /* ChangeMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6629AA72760F0A1008DACC3 /* ChangeMemberViewController.swift */; };
 		B6FBFCD627565EEC001365FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD527565EEC001365FC /* AppDelegate.swift */; };
 		B6FBFCD827565EEC001365FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD727565EEC001365FC /* SceneDelegate.swift */; };
 		B6FBFCDA27565EEC001365FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBFCD927565EEC001365FC /* ViewController.swift */; };
@@ -42,6 +45,9 @@
 		B6424811275A598A00C7278A /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		B6424813275A599800C7278A /* PlayerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoViewController.swift; sourceTree = "<group>"; };
 		B6424815275A59A700C7278A /* MemberInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoViewController.swift; sourceTree = "<group>"; };
+		B6629AA32760ED4D008DACC3 /* ChangeStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStudentViewController.swift; sourceTree = "<group>"; };
+		B6629AA52760F08F008DACC3 /* ChangePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePlayerViewController.swift; sourceTree = "<group>"; };
+		B6629AA72760F0A1008DACC3 /* ChangeMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMemberViewController.swift; sourceTree = "<group>"; };
 		B6FBFCD227565EEC001365FC /* FinalExamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalExamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FBFCD527565EEC001365FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6FBFCD727565EEC001365FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				B6FBFCD727565EEC001365FC /* SceneDelegate.swift */,
 				B6FBFCD927565EEC001365FC /* ViewController.swift */,
 				B6FBFCDB27565EEC001365FC /* Main.storyboard */,
+				B6629AA52760F08F008DACC3 /* ChangePlayerViewController.swift */,
+				B6629AA72760F0A1008DACC3 /* ChangeMemberViewController.swift */,
+				B6629AA32760ED4D008DACC3 /* ChangeStudentViewController.swift */,
 				B6424811275A598A00C7278A /* StudentInfoViewController.swift */,
 				B6424813275A599800C7278A /* PlayerInfoViewController.swift */,
 				B6424815275A59A700C7278A /* MemberInfoViewController.swift */,
@@ -180,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6629AA82760F0A1008DACC3 /* ChangeMemberViewController.swift in Sources */,
 				B61356072757FA4300F1E56A /* MemberViewController.swift in Sources */,
 				B6424814275A599800C7278A /* PlayerInfoViewController.swift in Sources */,
 				B6FBFCDA27565EEC001365FC /* ViewController.swift in Sources */,
@@ -188,7 +198,9 @@
 				B6FBFCF1275665DF001365FC /* Students.swift in Sources */,
 				069F2FB82756E7B300B0877A /* ViewControllerAthletics.swift in Sources */,
 				069F2FBA2756E7C600B0877A /* ViewControllerClubs.swift in Sources */,
+				B6629AA42760ED4D008DACC3 /* ChangeStudentViewController.swift in Sources */,
 				B6424816275A59A700C7278A /* MemberInfoViewController.swift in Sources */,
+				B6629AA62760F08F008DACC3 /* ChangePlayerViewController.swift in Sources */,
 				B6424812275A598A00C7278A /* StudentInfoViewController.swift in Sources */,
 				B61356092757FCF900F1E56A /* StudentNamesViewController.swift in Sources */,
 				B6FBFCD627565EEC001365FC /* AppDelegate.swift in Sources */,

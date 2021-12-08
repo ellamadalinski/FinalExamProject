@@ -42,12 +42,6 @@ class StudentInfoViewController: UIViewController {
         }, completion: nil)
     }
     
-    @IBAction func monthButtonAction(_ sender: UIButton) {
-    }
-    @IBAction func dayButtonAction(_ sender: UIButton) {
-    }
-    @IBAction func yearButtonAction(_ sender: UIButton) {
-    }
     
     
 }
