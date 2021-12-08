@@ -94,18 +94,19 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
                                             
                 if let studentName = textFields[0].text {
                                                 
-                    self.incomingClass.studentsArray.append(Students(n: studentName))
+                    self.incomingClass.studentsArray[self.whichClicked].name = studentName
                     
                 }
             self.tableViewOutlet.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let goToStudentsScreen = UIAlertAction(title: "Go to student screen", style: .default) { blah in
-            self.performSegue(withIdentifier: "goToStudents", sender: nil)
+            self.performSegue(withIdentifier: "studentsToStudentInfo", sender: nil)
         }
        
         alertController.addAction(cancelAction)
         alertController.addAction(changeNameAction)
+        alertController.addAction(goToStudentsScreen)
         
         self.present(alertController,
                      animated: true)
