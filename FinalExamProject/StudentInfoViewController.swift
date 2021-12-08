@@ -14,7 +14,7 @@ class StudentInfoViewController: UIViewController {
     @IBOutlet weak var yearButtonOutlet: UIButton!
     
     let transparentView = UIView()
-    
+    //to try to make push work fosho
     override func viewDidLoad() {
         super.viewDidLoad()
 
