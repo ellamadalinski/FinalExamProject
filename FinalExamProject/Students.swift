@@ -17,8 +17,17 @@ public class StaticStuff {
 
 class Students{
     var name: String
-    init(n: String){
+    var daysMissed: [Int]
+    var studentNotes: String
+    init(n: String, dm: [Int], sn: String){
         name = n
+        daysMissed = dm
+        studentNotes = sn
+    }
+    init() {
+        name = "default"
+        daysMissed = [Int]()
+        studentNotes = ""
     }
     //you ever just jump off a cliff fosho?
     //yeah fosho

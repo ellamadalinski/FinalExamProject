@@ -9,9 +9,11 @@ import UIKit
 
 class StudentInfoViewController: UIViewController {
     
-    @IBOutlet weak var monthButtonOutlet: UIButton!
-    @IBOutlet weak var dayButtonOutlet: UIButton!
-    @IBOutlet weak var yearButtonOutlet: UIButton!
+   
+    
+    @IBOutlet weak var studentNameLabel: UILabel!
+    
+    var incomingStudent = Students()
     
     let transparentView = UIView()
     //to try to make push work fosho
@@ -19,6 +21,12 @@ class StudentInfoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        studentNameLabel.text = incomingStudent.name
+        
     }
     
     func addTransparentView(){

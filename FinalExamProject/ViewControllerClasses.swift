@@ -97,7 +97,7 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "classesToStudents" {
             let nvc = segue.destination as! StudentNamesViewController
             nvc.incomingClass = clickedClass
-            print("jamal")
+            
         }
     }
 

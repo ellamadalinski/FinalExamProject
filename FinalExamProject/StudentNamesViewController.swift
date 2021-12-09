@@ -21,6 +21,13 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "studentsToStudentInfo" {
+            let nvc = segue.destination as! StudentInfoViewController
+            nvc.incomingStudent = incomingClass.studentsArray[whichClicked]
+        }
+    }
+    
     
     @IBAction func addStudentAction(_ sender: UIButton) {
         self.presentAlertController()
@@ -67,7 +74,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("did select row at")
+        
         whichClicked = indexPath.row
         performSegue(withIdentifier: "studentsToStudentInfo", sender: nil)
     }
