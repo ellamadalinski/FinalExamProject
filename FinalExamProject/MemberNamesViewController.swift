@@ -11,6 +11,7 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
 
     @IBOutlet weak var tableViewOutlet: UITableView!
     var incomingClub = Club(c: "default", sa: [Students]())
+    var whichClicked = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
 
                 if let memberName = textFields[0].text {
 
-                    self.incomingClub.studentsArray.append(Students(n: memberName))
+                    self.incomingClub.studentsArray.append(Students(n: memberName, dm: [Int](), sn: ""))
 
                 }
             self.tableViewOutlet.reloadData()
@@ -52,6 +53,11 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
 
         self.present(alertController,
                      animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        whichClicked = indexPath.row
+        performSegue(withIdentifier: "membersToMemberInfo", sender: nil)
     }
     
     

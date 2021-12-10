@@ -11,6 +11,7 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
 
     @IBOutlet weak var tableViewOutlet: UITableView!
     var incomingAthletic = Athletic(a: "default", sa: [Students](), s: "default")
+    var whichClicked = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
                                             
                 if let playerName = textFields[0].text {
                                                 
-                    self.incomingAthletic.studentsArray.append(Students(n: playerName))
+                    self.incomingAthletic.studentsArray.append(Students(n: playerName, dm: [Int](), sn: ""))
                     
                 }
             self.tableViewOutlet.reloadData()
@@ -52,6 +53,11 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
         
         self.present(alertController,
                      animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        whichClicked = indexPath.row
+        performSegue(withIdentifier: "playersToPlayerInfo", sender: nil)
     }
     
 }
