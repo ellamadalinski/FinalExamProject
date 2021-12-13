@@ -50,6 +50,10 @@ class StudentInfoViewController: UIViewController {
         }, completion: nil)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if 
+        let nvc = segue.destination as! ChangeStudentViewController
+        nvc.incomingStudent = incomingClass.studentsArray[whichClicked]
+    }
     
 }
