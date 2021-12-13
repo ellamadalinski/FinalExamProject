@@ -45,7 +45,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
                                             
                 if let studentName = textFields[0].text {
                                                 
-                    self.incomingClass.studentsArray.append(Students(n: studentName, dm: [Int](), sn: ""))
+                    self.incomingClass.studentsArray.append(Students(n: studentName, dm: [Int](), sn: "", w: 0, h: 0, y: 0))
                     
                 }
             self.tableViewOutlet.reloadData()
