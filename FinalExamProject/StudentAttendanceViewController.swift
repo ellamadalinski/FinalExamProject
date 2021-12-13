@@ -7,23 +7,46 @@
 
 import UIKit
 
-class StudentAttendanceViewController: UIViewController {
-
+class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    
+    var newIncomingClass = Class(c: "default", cp: "default", sa: [Students]())
+    @IBOutlet weak var tableViewOutlet: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
+        self.tableViewOutlet.allowsMultipleSelection = true
+        self.tableViewOutlet.allowsMultipleSelectionDuringEditing = true
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newIncomingClass.studentsArray.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = newIncomingClass.studentsArray[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        newIncomingClass.studentsArray[indexPath.row].absent = true
+        
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        newIncomingClass.studentsArray[indexPath.row].absent = false
+    }
+    
+    
+    @IBAction func markAsAbsentAction(_ sender: UIButton) {
+        
+    }
+    
+    
 
 }

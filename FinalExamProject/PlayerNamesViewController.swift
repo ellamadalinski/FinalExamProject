@@ -42,7 +42,7 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
                                             
                 if let playerName = textFields[0].text {
                                                 
-                    self.incomingAthletic.studentsArray.append(Students(n: playerName, dm: [Int](), sn: "", w: 0, h: 0, y: 0))
+                    self.incomingAthletic.studentsArray.append(Students(n: playerName, dm: [Int](), sn: "", w: 0, h: 0, y: 0, a: false))
                     
                 }
             self.tableViewOutlet.reloadData()

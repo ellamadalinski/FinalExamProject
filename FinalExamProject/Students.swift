@@ -22,14 +22,15 @@ class Students{
     var weight: Int
     var height: Int
     var year: Int
-    
-    init(n: String, dm: [Int], sn: String, w: Int, h: Int, y: Int){
+    var absent = false
+    init(n: String, dm: [Int], sn: String, w: Int, h: Int, y: Int, a: Bool){
         name = n
         daysMissed = dm
         studentNotes = sn
         weight = w
         height = h
         year = y
+        absent = a
     }
     init() {
         name = "default"
@@ -39,8 +40,8 @@ class Students{
         height = 0
         year = 0
     }
-    //you ever just jump off a cliff fosho?
-    //yeah fosho
+    
+    
 }
 
 public class Class {
