@@ -26,6 +26,10 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
             let nvc = segue.destination as! StudentInfoViewController
             nvc.incomingStudent = incomingClass.studentsArray[whichClicked]
         }
+        if segue.identifier == "studentNamesToAttendance" {
+            let nvc = segue.destination as! StudentAttendanceViewController
+            nvc.newIncomingClass = incomingClass
+        }
     }
     
     
@@ -45,7 +49,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
                                             
                 if let studentName = textFields[0].text {
                                                 
-                    self.incomingClass.studentsArray.append(Students(n: studentName, dm: [Int](), sn: "", w: 0, h: 0, y: 0))
+                    self.incomingClass.studentsArray.append(Students(n: studentName, dm: [Int](), sn: "", w: 0, h: 0, y: 0, a: false))
                     
                 }
             self.tableViewOutlet.reloadData()
