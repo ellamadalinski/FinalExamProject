@@ -17,13 +17,13 @@ public class StaticStuff {
 
 class Students{
     var name: String
-    var daysMissed: [Int]
+    var daysMissed: [String]
     var studentNotes: String
     var weight: Int
     var height: Int
     var year: Int
     var absent = false
-    init(n: String, dm: [Int], sn: String, w: Int, h: Int, y: Int, a: Bool){
+    init(n: String, dm: [String], sn: String, w: Int, h: Int, y: Int, a: Bool){
         name = n
         daysMissed = dm
         studentNotes = sn
@@ -34,7 +34,7 @@ class Students{
     }
     init() {
         name = "default"
-        daysMissed = [Int]()
+        daysMissed = [String]()
         studentNotes = ""
         weight = 0
         height = 0

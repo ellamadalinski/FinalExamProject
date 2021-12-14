@@ -44,7 +44,10 @@ class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UI
     
     
     @IBAction func markAsAbsentAction(_ sender: UIButton) {
-        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        print(dateFormatter.string(from: date))
     }
     
     
