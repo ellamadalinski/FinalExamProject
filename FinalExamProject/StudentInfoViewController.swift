@@ -14,6 +14,9 @@ class StudentInfoViewController: UIViewController {
     @IBOutlet weak var studentNameLabel: UILabel!
     
     var incomingStudent = Students()
+    @IBOutlet weak var absentDaysTextViewOutlet: UITextView!
+    @IBOutlet weak var extraNotesTextViewOutlet: UITextView!
+    @IBOutlet weak var yearLabelOutlet: UILabel!
     
     let transparentView = UIView()
     //to try to make push work fosho
@@ -23,9 +26,28 @@ class StudentInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("appeared")
+        
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         studentNameLabel.text = incomingStudent.name
+        yearLabelOutlet.text = "Year: \(incomingStudent.year)"
+        
+        var absentDays = ""
+        for day in incomingStudent.daysMissed {
+            absentDays += "\(String(day))\n"
+        }
+        absentDaysTextViewOutlet.text = absentDays
+        
+        var notes = ""
+        for note in incomingStudent.studentNotes {
+            notes += "\(note)\n"
+        }
+        extraNotesTextViewOutlet.text = notes
         
     }
     
@@ -51,9 +73,10 @@ class StudentInfoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if 
-        let nvc = segue.destination as! ChangeStudentViewController
-        nvc.incomingStudent = incomingClass.studentsArray[whichClicked]
+        if segue.identifier == "studentInfoToChangeStudent"{
+            let nvc = segue.destination as! ChangeStudentViewController
+            nvc.incomingStudent = incomingStudent
+        }
     }
     
 }
