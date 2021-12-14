@@ -42,7 +42,7 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
 
                 if let memberName = textFields[0].text {
 
-                    self.incomingClub.studentsArray.append(Students(n: memberName, dm: [String](), sn: "", w: 0, h: 0, y: 0, a: false))
+                    self.incomingClub.studentsArray.append(Students(n: memberName, dm: [String](), sn: [String](), w: 0, h: 0, y: 0, a: false))
 
                 }
             self.tableViewOutlet.reloadData()
