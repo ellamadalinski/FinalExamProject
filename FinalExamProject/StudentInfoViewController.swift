@@ -32,6 +32,8 @@ class StudentInfoViewController: UIViewController {
         
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         studentNameLabel.text = incomingStudent.name
