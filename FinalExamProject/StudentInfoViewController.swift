@@ -36,8 +36,11 @@ class StudentInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         studentNameLabel.text = incomingStudent.name
         yearLabelOutlet.text = "Year: \(incomingStudent.year)"
+        absentDaysTextViewOutlet.text = ""
+        extraNotesTextViewOutlet.text = ""
         
         var absentDays = ""
         for day in incomingStudent.daysMissed {
@@ -77,8 +80,11 @@ class StudentInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "studentInfoToChangeStudent"{
             let nvc = segue.destination as! ChangeStudentViewController
+            nvc.delegate = self
             nvc.incomingStudent = incomingStudent
         }
+        
+        
     }
     
 }

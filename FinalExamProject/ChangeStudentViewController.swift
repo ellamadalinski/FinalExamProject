@@ -10,6 +10,7 @@ import UIKit
 class ChangeStudentViewController: UIViewController {
 
     var incomingStudent = Students()
+    var delegate : StudentInfoViewController!
     
     @IBOutlet weak var studentYearTextFieldOutlet: UITextField!
     @IBOutlet weak var monthTextFieldOutlet: UITextField!
@@ -24,6 +25,12 @@ class ChangeStudentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        print("disappearing")
+        delegate.viewWillAppear(true)
+    }
+    
+    
 
     @IBAction func addAbsentDay(_ sender: UIButton) {
         if let monthText = monthTextFieldOutlet.text{
@@ -31,7 +38,7 @@ class ChangeStudentViewController: UIViewController {
                 if let yearText = yearTextFieldOutlet.text{
                     let dayMissedText = monthText+dayText+yearText
                     if let dayMissed = Int(dayMissedText){
-                        incomingStudent.daysMissed.append(dayMissed)
+                        incomingStudent.daysMissed.append("")
                         //print(incomingStudent.daysMissed)
                         monthTextFieldOutlet.text = ""
                         dayTextFieldOutlet.text = ""
@@ -42,7 +49,7 @@ class ChangeStudentViewController: UIViewController {
         }
         
         else{
-            let alertController = UIAlertController(title: "Invalid Month, Day, or Year", message: "Be sure that the month, day, and year are entered as numbers.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Invalid Month, Day, or Year", message: "Be sure that the month, day, and year are entered as numbers. Example: Month-2 Day-16 Year-2024", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertController.addAction(okAction)
             self.present(alertController, animated: false, completion: nil)
