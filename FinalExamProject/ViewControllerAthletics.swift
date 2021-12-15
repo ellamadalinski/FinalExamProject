@@ -16,6 +16,14 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        if let athletics = UserDefaults.standard.data(forKey: "athletics") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Athletic].self, from: athletics){
+                StaticStuff.athleticArray = decoded
+               
+            }
+        }
+      
         
     }
     
@@ -37,6 +45,14 @@ class ViewControllerAthletics: UIViewController, UITableViewDelegate, UITableVie
             if let className = textFields[0].text {
                 if let season = textFields[1].text {
                     StaticStuff.athleticArray.append(Athletic(a: className, sa: [Students](), s: season))
+                    
+                    let encoder = JSONEncoder()
+                    
+                    if let encoded = try? encoder.encode(StaticStuff.athleticArray) {
+                        
+                        UserDefaults.standard.set(encoded, forKey: "athletics")
+                        
+                    }
                 }
             }
             self.tableViewOutlet.reloadData()

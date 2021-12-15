@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                                             
                                             if let emailText = textFields[0].text {
                                                 StaticStuff.name = emailText
-                                                self.nameLabel.text = StaticStuff.name
+                                                self.nameLabel.text = "welcome \(StaticStuff.name)"
                                             }
         }
 

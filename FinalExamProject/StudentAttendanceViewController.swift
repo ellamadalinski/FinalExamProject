@@ -71,7 +71,10 @@ class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UI
             yuh += 1
           
         }
-        
+        let alertcontroller = UIAlertController(title: "Marked as absent", message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        alertcontroller.addAction(action)
+        self.present(alertcontroller, animated: true)
     }
     
     

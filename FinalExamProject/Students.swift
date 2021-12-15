@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class StaticStuff {
+public class StaticStuff: Codable {
     public static var name = ""
     public static var classesArray = [Class]()
     public static var athleticArray = [Athletic]()
@@ -15,7 +15,7 @@ public class StaticStuff {
     
 }
 
-class Students{
+class Students: Codable{
     var name: String
     var daysMissed: [String]
     var studentNotes: [String]
@@ -44,7 +44,7 @@ class Students{
     
 }
 
-public class Class {
+public class Class: Codable {
     var className: String
     var classPeriod: String
     var studentsArray: [Students]
@@ -56,7 +56,7 @@ public class Class {
     }
 }
 
-public class Athletic {
+public class Athletic: Codable {
     var athleticName: String
     var season: String
     var studentsArray: [Students]
@@ -68,7 +68,7 @@ public class Athletic {
     }
 }
 
-public class Club {
+public class Club: Codable {
     var clubName: String
     var studentsArray: [Students]
     

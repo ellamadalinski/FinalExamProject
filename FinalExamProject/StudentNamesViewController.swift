@@ -132,7 +132,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
                             if let studentName = textFields[0].text {
         
                                 self?.incomingClass.studentsArray[indexPath.row].name = studentName
-        
+                              
                             }
                         tableView.reloadData()
                     }

@@ -23,6 +23,16 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
 
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        
+        if let classes = UserDefaults.standard.data(forKey: "classes") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Class].self, from: classes){
+                StaticStuff.classesArray = decoded
+               
+            }
+        }
+       
+
     }
     
     
@@ -48,10 +58,19 @@ class ViewControllerClasses: UIViewController, UITableViewDelegate, UITableViewD
             if let className = textFields[0].text {
                 if let classPeriod = textFields[1].text{
                     StaticStuff.classesArray.append(Class(c: className, cp: classPeriod, sa: [Students]()))
+                    let encoder = JSONEncoder()
+                    
+                    if let encoded = try? encoder.encode(StaticStuff.classesArray) {
+                        
+                        UserDefaults.standard.set(encoded, forKey: "classes")
+                        
+                    }
                 }
                                                
                                                 
             }
+            
+            
             self.tableViewOutlet.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

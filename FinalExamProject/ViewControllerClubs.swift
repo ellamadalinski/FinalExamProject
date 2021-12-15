@@ -19,7 +19,15 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
         
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
-        // Do any additional setup after loading the view.
+        if let clubs = UserDefaults.standard.data(forKey: "clubs") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Club].self, from: clubs){
+                StaticStuff.clubArray = decoded
+               
+            }
+        }
+       
+        
     }
     
     @IBAction func addAction(_ sender: UIButton) {
@@ -37,13 +45,17 @@ class ViewControllerClubs: UIViewController , UITableViewDelegate , UITableViewD
             
         }
         
-        let addClubAction = UIAlertAction(title: "Add",
-                                           style: .default) { [weak alertController] _ in
-                                            guard let textFields = alertController?.textFields else { return }
+        let addClubAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in   guard let textFields = alertController?.textFields else { return }
                                             
-                                            if let clubName = textFields[0].text {
-                                                StaticStuff.clubArray.append(Club(c: clubName, sa: [Students]()))
-                                               
+              if let clubName = textFields[0].text {
+                       StaticStuff.clubArray.append(Club(c: clubName, sa: [Students]()))
+                  let encoder = JSONEncoder()
+                  
+                  if let encoded = try? encoder.encode(StaticStuff.clubArray) {
+                      
+                      UserDefaults.standard.set(encoded, forKey: "clubs")
+                      
+                  }
                                                 
                                             }
             self.tableViewOutlet.reloadData()
