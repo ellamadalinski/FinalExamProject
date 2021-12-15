@@ -92,8 +92,63 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
             tableView.reloadData()
           
         }
+//        if editingStyle == .none{
+//            let alertController = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
+//            alertController.addTextField { (textField) in
+//                textField.placeholder = "Change Name"
+//
+//            }
+//
+//
+//            let changeNameAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+//
+//                    if let studentName = textFields[0].text {
+//
+//                        self.incomingClass.studentsArray[self.whichClicked].name = studentName
+//
+//                    }
+//                self.tableViewOutlet.reloadData()
+//            }
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//            alertController.addAction(cancelAction)
+//            alertController.addAction(changeNameAction)
+//            self.present(alertController,
+//                         animated: true)
+//        }
     }
-   
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let action = UIContextualAction(style: .normal, title: "Change Name") { [weak self] (action, view, completionHandler) in
+        
+                    let alertController = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
+                    alertController.addTextField { (textField) in
+                        textField.placeholder = "Change Name"
+        
+                    }
+        
+        
+                    let changeNameAction = UIAlertAction(title: "Add", style: .default) { [weak alertController] _ in guard let textFields = alertController?.textFields else { return }
+        
+                            if let studentName = textFields[0].text {
+        
+                                self?.incomingClass.studentsArray[indexPath.row].name = studentName
+        
+                            }
+                        tableView.reloadData()
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(changeNameAction)
+        
+        self?.present(alertController,animated: true)
+        
+        
+        
+        completionHandler(true)
+        }
+        action.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
     @IBAction func cellHeld(_ sender: UILongPressGestureRecognizer) {
         
@@ -130,6 +185,7 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         alertController.addAction(changeNameAction)
         alertController.addAction(goToStudentsScreen)
         
+       
         self.present(alertController,
                      animated: true)
         

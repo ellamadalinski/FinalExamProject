@@ -12,7 +12,7 @@ class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UI
     
     var newIncomingClass = Class(c: "", cp: "", sa: [Students]())
     @IBOutlet weak var tableViewOutlet: UITableView!
-    
+    var global = [IndexPath]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = newIncomingClass.studentsArray[indexPath.row].name
+        global.append(indexPath)
         return cell
     }
     
@@ -47,7 +48,30 @@ class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UI
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        print(dateFormatter.string(from: date))
+        let currentDate = dateFormatter.string(from: date)
+        var index = 0
+        while(index < newIncomingClass.studentsArray.count) {
+            if newIncomingClass.studentsArray[index].absent {
+                newIncomingClass.studentsArray[index].daysMissed.append(currentDate)
+            }
+            else {
+                
+            }
+            index += 1
+        }
+        var yuh = 0
+        var insideYuh = 0
+        while(yuh < newIncomingClass.studentsArray.count) {
+            while(insideYuh < global.count) {
+             
+                tableViewOutlet.deselectRow(at: global[insideYuh], animated: true)
+                insideYuh += 1
+            }
+            newIncomingClass.studentsArray[yuh].absent = false
+            yuh += 1
+          
+        }
+        
     }
     
     

@@ -60,6 +60,11 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
         performSegue(withIdentifier: "membersToMemberInfo", sender: nil)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "memberNamesToAttendance" {
+            let nvc = segue.destination as! MemberAttendanceViewController
+            nvc.newIncomingMember = incomingClub
+        }
+    }
     
 }
