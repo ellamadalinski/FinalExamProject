@@ -10,7 +10,7 @@ import UIKit
 class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
 
     @IBOutlet weak var tableViewOutlet: UITableView!
-    var incomingAthletic = Athletic(a: "default", sa: [Students](), s: "default")
+    var incomingAthletic = Athletic(a: "", sa: [Students](), s: "")
     var whichClicked = 0
     
     override func viewDidLoad() {
@@ -57,7 +57,18 @@ class PlayerNamesViewController: UIViewController , UITableViewDelegate , UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         whichClicked = indexPath.row
-        performSegue(withIdentifier: "playersToPlayerInfo", sender: nil)
+        performSegue(withIdentifier: "playerToPlayerInfo", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "playerToPlayerInfo" {
+            let nvc = segue.destination as! PlayerInfoViewController
+            nvc.incomingPlayer = incomingAthletic.studentsArray[whichClicked]
+        }
+        if segue.identifier == "playerNamesToAttendance" {
+            let nvc = segue.destination as! PlayerAttendanceViewController
+            nvc.newIncomingAthletic = incomingAthletic
+        }
     }
     
 }

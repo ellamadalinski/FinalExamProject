@@ -73,15 +73,18 @@ class StudentNamesViewController: UIViewController , UITableViewDelegate , UITab
         cell.textLabel?.text = incomingClass.studentsArray[indexPath.row].name
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
        // when you click on another cell it deselects the previous cell you were clicked on
        
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         whichClicked = indexPath.row
         performSegue(withIdentifier: "studentsToStudentInfo", sender: nil)
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             incomingClass.studentsArray.remove(at: indexPath.row)

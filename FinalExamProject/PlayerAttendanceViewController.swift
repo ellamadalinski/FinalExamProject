@@ -9,6 +9,8 @@ import UIKit
 
 class PlayerAttendanceViewController: UIViewController {
 
+    var newIncomingAthletic = Athletic(a: "", sa: [Students](), s: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

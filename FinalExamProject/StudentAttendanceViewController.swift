@@ -10,7 +10,7 @@ import UIKit
 class StudentAttendanceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     
-    var newIncomingClass = Class(c: "default", cp: "default", sa: [Students]())
+    var newIncomingClass = Class(c: "", cp: "", sa: [Students]())
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     
