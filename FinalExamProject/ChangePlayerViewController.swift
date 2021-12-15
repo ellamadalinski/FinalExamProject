@@ -27,7 +27,7 @@ class ChangePlayerViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("disappearing")
+        //print("disappearing")
         delegate.viewWillAppear(true)
     }
     

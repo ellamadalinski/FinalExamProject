@@ -61,6 +61,11 @@ class MemberNamesViewController: UIViewController , UITableViewDelegate , UITabl
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "membersToMemberInfo" {
+            let nvc = segue.destination as! MemberInfoViewController
+            nvc.incomingMember = incomingClub.studentsArray[whichClicked]
+        }
+        
         if segue.identifier == "memberNamesToAttendance" {
             let nvc = segue.destination as! MemberAttendanceViewController
             nvc.newIncomingMember = incomingClub

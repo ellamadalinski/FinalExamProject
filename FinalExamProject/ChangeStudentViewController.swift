@@ -26,7 +26,7 @@ class ChangeStudentViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("disappearing")
+        //print("disappearing")
         delegate.viewWillAppear(true)
     }
     
@@ -100,6 +100,12 @@ class ChangeStudentViewController: UIViewController {
             if let studentYear = Int(studentYearString){
                 incomingStudent.year = studentYear
                 studentYearTextFieldOutlet.text = ""
+            }
+            else{
+                let alertController = UIAlertController(title: "Invalid Entry", message: "Be sure you entered a valid number", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }

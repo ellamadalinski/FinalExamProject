@@ -1002,6 +1002,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cxA-ZM-8Xk"/>
+                    <connections>
+                        <outlet property="absentDaysTextViewOutlet" destination="0vi-1F-NoF" id="UB7-vK-YPV"/>
+                        <outlet property="extraNotesTextViewOutlet" destination="oai-ue-wSL" id="gHY-d6-uUR"/>
+                        <outlet property="memberNameLabelOutlet" destination="RYT-SF-Opc" id="zKm-7i-nTL"/>
+                        <outlet property="memberYearLabelOutlet" destination="rXM-bk-AQ7" id="Ngy-3i-bXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfl-cl-Wrl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1049,6 +1055,9 @@
                                 <color key="backgroundColor" red="0.66667586570000004" green="0.66665023570000004" blue="0.66666758059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change"/>
+                                <connections>
+                                    <action selector="changeMemberYearButtonAction:" destination="04W-gy-VTa" eventType="touchUpInside" id="lM4-Il-ng4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month (1-2)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6W-uL-SLx">
                                 <rect key="frame" x="41" y="349" width="96" height="34"/>
@@ -1071,25 +1080,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9B-Xl-vmX">
-                                <rect key="frame" x="164" y="409" width="63" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNj-eb-Wlj">
+                                <rect key="frame" x="164" y="611" width="63" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.66667586570000004" green="0.66665023570000004" blue="0.66666758059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <connections>
+                                    <action selector="addExtraNoteButtonAction:" destination="04W-gy-VTa" eventType="touchUpInside" id="c0m-Ai-kJh"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Month (1-2)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSV-pj-Ff2">
-                                <rect key="frame" x="42" y="543" width="307" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Note Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSV-pj-Ff2">
+                                <rect key="frame" x="42" y="554" width="307" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93337172270000002" green="0.93324393029999997" blue="0.93725663420000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9B-Xl-vmX">
+                                <rect key="frame" x="164" y="411" width="63" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.66667586570000004" green="0.66665023570000004" blue="0.66666758059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <connections>
+                                    <action selector="addAbsentDayButtonAction:" destination="04W-gy-VTa" eventType="touchUpInside" id="Hkx-V8-kFE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="teL-JF-HsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="UT8-1D-rgb"/>
+                    <connections>
+                        <outlet property="dayTextFieldOutlet" destination="ik3-Sq-06P" id="EnP-De-OYk"/>
+                        <outlet property="extraNoteTextFieldOutlet" destination="bSV-pj-Ff2" id="c8A-4m-Tar"/>
+                        <outlet property="memberYearTextFieldOutlet" destination="Yhc-ev-AR3" id="0oy-vx-VfU"/>
+                        <outlet property="monthTextFieldOutlet" destination="a6W-uL-SLx" id="PD9-QJ-YYg"/>
+                        <outlet property="yearTextFieldOutlet" destination="3kK-c1-6hX" id="dS2-Fn-bnt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnr-vX-aLm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
